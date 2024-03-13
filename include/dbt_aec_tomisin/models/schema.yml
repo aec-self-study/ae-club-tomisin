@@ -2,13 +2,14 @@ version: 2
  
 models:
   - name: stg_customers
-    description: Staging model for our customers
+    description: '{{docs("coffee_docs")}}'
     columns:
       - name: customer_id
         description: Primary key of the model
         tests:
           - unique
           - not_null
+          
   - name: monthly_customers
     columns:
       - name: date
