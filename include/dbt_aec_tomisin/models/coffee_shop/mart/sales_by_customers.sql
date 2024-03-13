@@ -1,6 +1,6 @@
 select
     date_trunc(orders.created_at,week) as sales_week,
-    products.category as product_category,
+    -- products.category as product_category,
     null as is_new_customer,
     sum(order_items.item_price) as total_income
 from 
@@ -10,4 +10,4 @@ from
     left join {{ref('products')}} as products
         on order_items.product_id = products.product_id
 group by
-    1,2,3
+    1,2 --,3
