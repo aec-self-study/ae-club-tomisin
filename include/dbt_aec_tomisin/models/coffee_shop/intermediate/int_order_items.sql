@@ -7,11 +7,11 @@ select
     products.category as product_category
 
 from 
-    {{ref('order_items')}} as order_items
+    {{ref('stg_order_items')}} as order_items
     join {{ref('stg_orders')}} as orders
         on order_items.order_id = orders.order_id
-    join {{ref('product_prices')}} as product_prices
+    join {{source('coffee_shop', 'product_prices')}} as product_prices
         on orders.created_at between product_prices.created_at and product_prices.ended_at
         and order_items.product_id = product_prices.product_id
-    join {{ref('products')}} as products
+    join {{ref('stg_products')}} as products
         on order_items.product_id = products.product_id

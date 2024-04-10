@@ -2,7 +2,7 @@ version: 2
  
 models:
   - name: stg_customers
-    description: '{{docs("coffee_docs")}}'
+    # description: '{{docs("coffee_docs")}}'
     columns:
       - name: customer_id
         description: Primary key of the model

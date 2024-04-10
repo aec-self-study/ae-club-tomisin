@@ -8,7 +8,7 @@ from
     {{ref('stg_orders')}} as orders 
     left join {{ref('int_order_items')}} as order_items
         on orders.order_id = order_items.order_id
-    left join {{ref('products')}} as products
+    left join {{ref('stg_products')}} as products
         on order_items.product_id = products.product_id
 group by
-    1,2,3
+    1,2
