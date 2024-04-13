@@ -1,0 +1,71 @@
+version: 2
+ 
+sources:
+  - name: coffee_shop
+    project: analytics-engineers-club      
+
+    tables:
+      - name: customers      
+    
+        description: "customer source"        
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+ 
+      - name: orders
+        freshness:
+          warn_after: 
+            count: 1
+            period: day
+        loaded_at_field: created_at  
+        description: "order source"
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: products
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+              
+      - name: order_items
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: product_prices
+        # tests:
+        #   - dbt_utils.mutually_exclusive_ranges:
+        #       lower_bound_column: created_at
+        #       upper_bound_column: ended_at
+        #       partition_by: id
+        #       gaps: required
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: web_tracking
+        project: analytics-engineers-club
+        tables:
+          - name: pageviews
+            columns:
+              - name: id
+                tests:
+                  - unique
+                  - not_null
+                  
+      - name: advanced_dbt_examples
+        project: analytics-engineers-club
+        tables:
+          - name: form_events
+          - name: favorite_ice_cream_flavors

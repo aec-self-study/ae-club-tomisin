@@ -1,0 +1,15 @@
+[0m12:39:57.666719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bf609060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bfd85a20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bfd859c0>]}
+
+
+============================== 12:39:57.670072 | 01bba188-e9e4-454a-bfee-e3b04cc8fe3f ==============================
+[0m12:39:57.670072 [info ] [MainThread]: Running with dbt=1.7.9
+[0m12:39:57.670827 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': '/home/vscode/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt docs generate', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:39:57.671453 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /workspaces/ae-club-tomisin/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:39:57.672652 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_wall_clock_time": 0.0525448, "process_user_time": 1.915881, "process_kernel_time": 0.283834, "process_mem_max_rss": "86696", "process_in_blocks": "65736", "process_out_blocks": "8", "command_success": false}
+[0m12:39:57.673419 [debug] [MainThread]: Command `dbt docs generate` failed at 12:39:57.673254 after 0.05 seconds
+[0m12:39:57.673879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bf609060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bfd85ab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7611bfd859f0>]}
+[0m12:39:57.674357 [debug] [MainThread]: Flushing usage events
