@@ -1,0 +1,30 @@
+ISSUE:
+Customers may shop our online coffee shop using different devices. They might shop on their phone or on their personal computer or on their work computer. Until the customer actually signs in to make a purchase we won't be able to link that user's browsing sessions across devices.
+
+
+
+GOAL:
+We want to link users' browsing sessions together when we know that they are in fact the same user.
+
+
+
+EXERCISE:
+Create a model in your dbt project that has the same columns as web_tracking.pageviews except the visitor_id column should reflect this "user stitching" exercise so that each visitor that we know is the same person should have the same visitor_id.
+
+This query currently returns lots of customers that have multiple visitor IDs.
+
+------
+select customer_id, count(distinct visitor_id)
+  from `analytics-engineers-club.web_tracking.pageviews`
+where customer_id is not null
+group by 1 
+order by 2 desc 
+limit 5
+------
+
+In the new model you create, there should not be any customers with multiple visitor IDs. Once you have something in place, share your work in your cohort Slack group or #self-study! If you're feeling stuck, don't forget that you can use those Slack channels as a resource!
+
+
+
+BONUS:
+Try adding a test for this!
