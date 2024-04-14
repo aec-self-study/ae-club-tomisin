@@ -53,19 +53,21 @@ sources:
             tests:
               - unique
               - not_null
+              
+  - name: web_tracking
+    project: analytics-engineers-club
+        
+    tables:
+      - name: pageviews
+        columns:
+          - name: id
+            tests:
+             - unique
+             - not_null
 
-      - name: web_tracking
-        project: analytics-engineers-club
-        tables:
-          - name: pageviews
-            columns:
-              - name: id
-                tests:
-                  - unique
-                  - not_null
-                  
-      - name: advanced_dbt_examples
-        project: analytics-engineers-club
-        tables:
-          - name: form_events
-          - name: favorite_ice_cream_flavors
+  - name: advanced_dbt_examples
+    project: analytics-engineers-club
+        
+    tables:
+      - name: form_events
+      - name: favorite_ice_cream_flavors

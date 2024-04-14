@@ -1,0 +1,21 @@
+Exercise 2: Sessionization
+Often in internet applications, we talk about users' browsing "sessions." By "session," we roughly mean "one continuous period of browsing activity." However, our data does not have a "session" associated with the browsing activity we observe, so we need to create this concept.
+
+Goal:
+Create a session_id column for our pageviews table that groups together pageviews that are part of a continuous browsing session (per user).
+
+Exercise:
+Create a dbt model (or should you add this column onto the model you created in exercise 1?) that looks like the pageviews table but has a session_id column on it.
+
+Define a session as a series of page views that are not separated by a gap of more than 30 minutes. If you're feeling stuck, ask your fellow students in your cohort Slack group or #self-study! And don't forget to share your work in those channels when you're done! :)
+
+
+
+Bonus:
+How does changing the gap length affect the number of sessions we have? What if the gap length was 4 hours? What about 2 days?
+
+Bonus:
+Add session_start_time and session_end_time columns
+
+Bonus:
+Create a sessions metadata table with one row per session and information such as session length, number of pages visited, and whether or not the session ended in a purchase.
