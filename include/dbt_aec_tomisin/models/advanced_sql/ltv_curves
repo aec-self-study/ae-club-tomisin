@@ -1,0 +1,27 @@
+LTV stands for "lifetime value," and it's a very important concept for e-commerce businesses. One common report that e-commerce CEOs want to see are cohorted views of LTV curves.
+
+
+
+🧠 Technically, these curves are "average cumulative revenue" or "average cumulative gross profit" curves since "lifetime value" is a theoretical quantity as time goes to infinity. Nevertheless, pretty much everyone refers to these as "LTV curves" so that's the terminology we'll use here.
+Making these curves is notoriously tricky, and it's a thing that is very easy for analysts to get wrong. So, we want to build a helper table in our data warehouse so that analysts and BI tools can easily create these curves correctly.
+
+
+
+Goal:
+We want to create a table of pre-calculated cumulative revenue values for all of our customers so that we can easily build these cohorted LTV curves.
+
+Exercise: 
+Create a table (via dbt) that has one row per customer per week since that user was acquired. The table should have the following columns:
+customer_id
+week (this should start at 1 for each customer and then increment forward)
+revenue (the revenue from that customer in that week should be a lot of zeros)
+cumulative_revenue (the cumulative revenue from that customer as of that week)
+Again, if you hit a roadblock, ask your teachers and fellow students for help in your cohort Slack group or #self-study! Once you're done, share your work with everyone in those channels! :)
+
+Bonus: 
+What tests should we add here? (Think: which columns should be unique? Which columns should always be > 0?)
+
+Bonus:
+Calculate average LTV curves by device type
+Calculate average LTV curves by quarter of customer acquisition
+Note: this is harder than it might seem at first since you need to make sure you have the denominator correct in each week. Good luck!
