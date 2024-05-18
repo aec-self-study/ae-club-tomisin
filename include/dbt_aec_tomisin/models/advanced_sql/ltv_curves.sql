@@ -9,7 +9,7 @@ orders as (
 customer_weekly_orders as (
     select
         customer_id,
-        date_trunc(sold_at, week) as date_week,
+        date_trunc(created_at, week) as date_week,
         sum(total) as total_revenue
     from orders
     group by 1, 2
