@@ -40,5 +40,8 @@ if args.command == 'mut':
   print(f"The Multiplication result is  {our_mut}")
 
 if args.command == 'div':
-  our_div = args.ints_to_div[0] / args.ints_to_div[1]
-  print(f"The Division result is  {our_div}")
+  if args.ints_to_div[1] == 0:
+    print("Cannot Divide")
+  else:
+    our_div = args.ints_to_div[0] / args.ints_to_div[1]
+    print(f"The Division result is  {our_div}")
